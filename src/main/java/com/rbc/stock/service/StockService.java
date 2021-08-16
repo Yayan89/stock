@@ -7,6 +7,7 @@ import com.rbc.stock.mapper.StockMapper;
 import com.rbc.stock.repository.StockRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.BufferedReader;
@@ -26,6 +27,7 @@ public class StockService {
         this.stockMapper = stockMapper;
     }
 
+    @Transactional
     public void uploadFile(MultipartFile multipartFile) throws IOException {
         List<StockEntity> reader = new CsvToBeanBuilder<StockEntity>(new BufferedReader(new InputStreamReader(multipartFile.getInputStream())))
                 .withType(StockEntity.class)
@@ -39,6 +41,7 @@ public class StockService {
         return stockRepository.findAllByStock(ticker);
     }
 
+    @Transactional
     public StockEntity postStock(StockBody stockBody) {
         StockEntity stockEntity = stockMapper.convertStockToStockEntity(stockBody);
         return stockRepository.save(stockEntity);
