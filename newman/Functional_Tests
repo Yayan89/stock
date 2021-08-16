@@ -1,0 +1,113 @@
+{
+  "info": {
+    "_postman_id": "18a2030e-a2e6-4294-8416-67c2e3b454c1",
+    "name": "Functional Tests",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+  },
+  "item": [
+    {
+      "name": "POST - data file",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "file",
+              "type": "file",
+              "src": "/C:/Users/DNR6269/Projects/dow_jones_index.data"
+            }
+          ]
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/rbc/stock/file/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "rbc",
+            "stock",
+            "file",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "GET - stock ticker AA",
+      "protocolProfileBehavior": {
+        "disableBodyPruning": true
+      },
+      "request": {
+        "method": "GET",
+        "header": [],
+        "body": {
+          "mode": "formdata",
+          "formdata": [
+            {
+              "key": "ticker",
+              "value": "AA",
+              "type": "text"
+            }
+          ],
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/rbc/stock/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "rbc",
+            "stock",
+            ""
+          ]
+        }
+      },
+      "response": []
+    },
+    {
+      "name": "POST - Add AA Stock",
+      "request": {
+        "method": "POST",
+        "header": [],
+        "body": {
+          "mode": "raw",
+          "raw": "{\r\n    \"quarter\": 1,\r\n    \"stock\": \"DAT\",\r\n    \"date\": \"08/16/2021\",\r\n    \"open\": 99.99,\r\n    \"high\": 99.99,\r\n    \"low\": 99.99,\r\n    \"close\": 99.99,\r\n    \"volume\": 9999999,\r\n    \"percent_change_price\": 9.99,\r\n    \"next_weeks_open\": 99.99,\r\n    \"next_weeks_close\": 9.99,\r\n    \"percent_change_next_weeks_price\": -9.99,\r\n    \"days_to_next_dividend\": 99,\r\n    \"percent_return_next_dividend\": 0.99\r\n}",
+          "options": {
+            "raw": {
+              "language": "json"
+            }
+          }
+        },
+        "url": {
+          "raw": "http://localhost:8080/api/rbc/stock/",
+          "protocol": "http",
+          "host": [
+            "localhost"
+          ],
+          "port": "8080",
+          "path": [
+            "api",
+            "rbc",
+            "stock",
+            ""
+          ]
+        }
+      },
+      "response": []
+    }
+  ]
+}
