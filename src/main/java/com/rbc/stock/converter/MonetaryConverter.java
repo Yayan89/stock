@@ -5,7 +5,7 @@ import lombok.SneakyThrows;
 import org.apache.commons.lang3.StringUtils;
 
 import java.math.BigDecimal;
-public class MonetaryConverter extends AbstractBeanField {
+public class MonetaryConverter extends AbstractBeanField<String, String> {
     @SneakyThrows
     @Override
     protected Object convert(String s) {

@@ -5,7 +5,7 @@ import lombok.SneakyThrows;
 
 import java.text.SimpleDateFormat;
 
-public class DateConverter extends AbstractBeanField {
+public class DateConverter extends AbstractBeanField<String, String> {
     @SneakyThrows
     @Override
     protected Object convert(String s) {
