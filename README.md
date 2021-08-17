@@ -2,7 +2,7 @@
 rbc stock project
 
 to start: 
-`gradlew clean build`
+`gradlew clean build` or manually clean + build
 then Run app
 
 
